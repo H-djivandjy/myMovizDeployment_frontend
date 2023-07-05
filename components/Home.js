@@ -58,7 +58,7 @@ function Home() {
   useEffect(()=>{
 
     // fetch('http://localhost:3000/movies')
-    fetch('https://my-moviz-deployment-backend.vercel.app')
+    fetch('https://my-moviz-deployment-backend.vercel.app/')
         .then(res => res.json())
         .then(backendMoviesData => {
           // console.log(backendMoviesData.movies.results)
