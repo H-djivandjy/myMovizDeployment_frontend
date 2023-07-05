@@ -45,13 +45,21 @@ function Movie(props) {
     personalStars.push(<FontAwesomeIcon key={i} icon={faStar} onClick={() => setPersonalNote(i + 1)} style={style} className="note" />);
   }
 
+  //--- Tronquer la description 
+  function truncate(descriptionStr) {
+    if (descriptionStr.length > 250){
+      descriptionStr = descriptionStr.slice(0,180) + '...'
+    }
+    return descriptionStr
+  }
+
   return (
     <div className={styles.card}>
       <img className={styles.image} src={props.poster} alt={props.title} />
       <div className={styles.textContainer}>
         <div>
           <span className={styles.name}>{props.title}</span>
-          <p className={styles.description}>{props.overview}</p>
+          <p className={styles.description}>{truncate(props.overview)}</p>
         </div>
         <div className={styles.iconContainer}>
           <span className={styles.vote}>{stars} ({props.voteCount})</span>
