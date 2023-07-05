@@ -62,7 +62,7 @@ function Home() {
         .then(res => res.json())
         .then(backendMoviesData => {
           // console.log(backendMoviesData.movies.results)
-          setmoviesDataApi(backendMoviesData.movies.results)
+          return setmoviesDataApi(backendMoviesData.movies)
         })
 
   }, []);
