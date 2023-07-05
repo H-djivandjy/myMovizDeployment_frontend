@@ -51,7 +51,7 @@ function Home() {
   const imgUrl = 'https://image.tmdb.org/t/p/w500/' 
   const movies = moviesDataApi.map((data, i) => {
     const isLiked = likedMovies.some(movie => movie === data.title);
-    return <Movie key={i} updateLikedMovies={updateLikedMovies} isLiked={isLiked} title={data.title} overview={data.overview} poster={`${imgUrl}${data.poster_path}`} voteAverage={data.voteAverage} voteCount={data.voteCount} />;
+    return <Movie key={i} updateLikedMovies={updateLikedMovies} isLiked={isLiked} title={data.title} overview={data.overview} poster={`${imgUrl}${data.poster_path}`} voteAverage={data.vote_average} voteCount={data.vote_count} />;
     // console.log(data.title)
   });
   //* ____________________| Mécanique du HOOK |____________________
